@@ -74,7 +74,9 @@ def get_clip_probs(image_inputs, encoded_text, model, class_index=0):
     return clip_probs.narrow(dim=-1, start=class_index, length=1).squeeze(dim=-1)
 
 # Set up GAN
-gan_model_path = '../pretrained/ffhq.pkl'
+#gan_model_path = '../pretrained/ffhq.pkl'
+gan_model_path = '/content/drive/MyDrive/Colab Notebooks/ffhq_model/ffhq.pkl'
+
 # Initialize GAN generator and transforms
 with open(gan_model_path, 'rb') as f:
     G = pickle.load(f)['G_ema']
@@ -83,7 +85,9 @@ G.to(device)
 latent_space_dim = G.z_dim
 
 # Set up clip classifier
-clip_model_path = '../pretrained/clip_ViT-B-32.pt'
+#clip_model_path = '../pretrained/clip_ViT-B-32.pt'
+clip_model_path = '/root/.cache/clip/ViT-B-32.pt'
+
 clip_model = torch.jit.load(clip_model_path)
 clip_model.eval()
 clip_model.to(device)
