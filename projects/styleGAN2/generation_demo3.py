@@ -75,7 +75,9 @@ plt.imshow(img_np)
 # Set up clip classifier
 
 #clip_model_path = 'pretrained/clip_ViT-B-32.pt'
-clip_model_path = '/n/home05/sosmany/hays_lab/Lab/CLIP_Steering/projects/styleGAN2/CLIP/notebooks/model.pt'
+#clip_model_path = '/n/home05/sosmany/hays_lab/Lab/CLIP_Steering/projects/styleGAN2/CLIP/notebooks/model.pt'
+clip_model_path = '/root/.cache/clip/ViT-B-32.pt'
+
 
 
 model = torch.jit.load(clip_model_path).cuda().eval()
