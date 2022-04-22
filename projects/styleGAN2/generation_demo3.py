@@ -39,7 +39,8 @@ get_ipython().system('pip install requests')
 # In[6]:
 
 
-with open('ffhq.pkl', 'rb') as f:
+with open('/content/drive/MyDrive/Colab Notebooks/ffhq_model/ffhq.pkl', 'rb') as f:
+#with open('ffhq.pkl', 'rb') as f:
     G = pickle.load(f)['G_ema'].cuda()  # torch.nn.Module
 
 
