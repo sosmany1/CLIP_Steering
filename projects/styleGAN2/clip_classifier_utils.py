@@ -55,7 +55,8 @@ def whitespace_clean(text):
 
 
 class SimpleTokenizer(object):
-    def __init__(self, bpe_path: str = "../pretrained/bpe_simple_vocab_16e6.txt.gz"):
+    def __init__(self, bpe_path: str = "/content/CLIP_Steering/clip/bpe_simple_vocab_16e6.txt.gz"):
+    #def __init__(self, bpe_path: str = "../pretrained/bpe_simple_vocab_16e6.txt.gz"):
         self.byte_encoder = bytes_to_unicode()
         self.byte_decoder = {v: k for k, v in self.byte_encoder.items()}
         merges = gzip.open(bpe_path).read().decode("utf-8").split('\n')
